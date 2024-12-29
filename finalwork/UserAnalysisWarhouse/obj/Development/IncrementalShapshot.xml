@@ -1,0 +1,96 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>UserAnalysisWarhouse</Database>
+    <Server>localhost</Server>
+    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>lmCCvZ9a4Cy/FIZuISW+Gpr4E5w=2024/12/29 4:56:222024/12/29 4:56:22</TimeStamp>
+        <ID>
+          <String>Retail User Behavior WH</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>WL0oVBNmQKp2ps6j4bj5//K+6b4=2024/12/29 4:59:582024/12/29 4:57:29</TimeStamp>
+        <ID>
+          <String>RetailUserBehaviorWH</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>LQMs0CZoyZYeBzj4yy5NuhTg7rQ=2024/12/29 5:02:392024/12/29 5:00:22</TimeStamp>
+        <ID>
+          <String>Dim Property</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>nDnc5s/S6pqZjgQBklMQsd0Iox0=2024/12/29 5:00:222024/12/29 5:00:22</TimeStamp>
+        <ID>
+          <String>Dim Item</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>DUKE15U5oQUZ8DssMrb7XN1/wy8=2024/12/29 5:02:392024/12/29 5:00:22</TimeStamp>
+        <ID>
+          <String>Fact Item Property Bridge</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>3npRnJix4nvaIzSkNB99Pfs5jOs=2024/12/29 5:02:392024/12/29 5:00:22</TimeStamp>
+        <ID>
+          <String>Dim Event</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>+0sdnoK2HdRa3vr9K5MLEuiC9Ag=2024/12/29 5:02:392024/12/29 5:00:22</TimeStamp>
+        <ID>
+          <String>Dim Time</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>q823Snl7baVRaMA2E/P+pOFZNmw=2024/12/29 5:00:222024/12/29 5:00:22</TimeStamp>
+        <ID>
+          <String>Dim User</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>NuTua8+Br5Js91oI8VHfvFD8KNg=2024/12/29 5:02:392024/12/29 5:00:22qhwWDKyhapmZOnBkfBYq5ECNqb4=2024/12/29 5:00:222024/12/29 5:00:22</TimeStamp>
+        <ID>
+          <String>RetailUserBehaviorWH</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>bb+TdPvMy2oDeZ59UZmV4o3MS60=2024/12/28 21:26:152024/12/28 21:26:15</TimeStamp>
+      <ID>
+        <String>UserAnalysisWarhouse</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2024-12-28T21:05:01.846667Z</LastDeployed>
+</DeploymentSnapshot>
