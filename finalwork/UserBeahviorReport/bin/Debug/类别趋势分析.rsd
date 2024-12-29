@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>DataSource</DataSourceReference>
+      <CommandText>EVALUATE SUMMARIZECOLUMNS('Dim Property'[Category ID], 'Dim Time'[Full Date], 'Dim Time'[Time ID], "Fact User Events 计数", [Fact User Events 计数])</CommandText>
+      <rd:DesignerState>
+        <QueryDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+          <CommandType>DAX</CommandType>
+          <QuerySpecification xsi:type="MDXQuerySpecification">
+            <Select>
+              <Items>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Property</DimensionName>
+                    <HierarchyName>Category ID</HierarchyName>
+                    <HierarchyUniqueName>[Dim Property].[Category ID]</HierarchyUniqueName>
+                    <LevelName>Category ID</LevelName>
+                    <UniqueName>[Dim Property].[Category ID].[Category ID]</UniqueName>
+                  </ID>
+                  <ItemCaption>Category ID</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Time</DimensionName>
+                    <HierarchyName>Full Date</HierarchyName>
+                    <HierarchyUniqueName>[Dim Time].[Full Date]</HierarchyUniqueName>
+                    <LevelName>Full Date</LevelName>
+                    <UniqueName>[Dim Time].[Full Date].[Full Date]</UniqueName>
+                  </ID>
+                  <ItemCaption>Full Date</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Time</DimensionName>
+                    <HierarchyName>Time ID</HierarchyName>
+                    <HierarchyUniqueName>[Dim Time].[Time ID]</HierarchyUniqueName>
+                    <LevelName>Time ID</LevelName>
+                    <UniqueName>[Dim Time].[Time ID].[Time ID]</UniqueName>
+                  </ID>
+                  <ItemCaption>Time ID</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Measure">
+                    <MeasureName>Fact User Events 计数</MeasureName>
+                    <UniqueName>[Measures].[Fact User Events 计数]</UniqueName>
+                  </ID>
+                  <ItemCaption>Fact User Events 计数</ItemCaption>
+                  <BackColor>true</BackColor>
+                  <ForeColor>true</ForeColor>
+                  <FontFamily>true</FontFamily>
+                  <FontSize>true</FontSize>
+                  <FontWeight>true</FontWeight>
+                  <FontStyle>true</FontStyle>
+                  <FontDecoration>true</FontDecoration>
+                  <FormattedValue>true</FormattedValue>
+                  <FormatString>true</FormatString>
+                </Item>
+              </Items>
+            </Select>
+            <AutoExecute>false</AutoExecute>
+            <From>RetailUserBehaviorWH</From>
+            <Filter>
+              <FilterItems />
+            </Filter>
+            <Calculations />
+            <Aggregates />
+            <QueryProperties>
+              <IncludeMemberValue>true</IncludeMemberValue>
+            </QueryProperties>
+          </QuerySpecification>
+          <Query>
+            <Statement>EVALUATE SUMMARIZECOLUMNS('Dim Property'[Category ID], 'Dim Time'[Full Date], 'Dim Time'[Time ID], "Fact User Events 计数", [Fact User Events 计数])</Statement>
+            <ParameterDefinitions />
+          </Query>
+        </QueryDefinition>
+      </rd:DesignerState>
+    </Query>
+    <Fields>
+      <Field Name="Category_ID">
+        <DataField>Dim Property[Category ID]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Full_Date">
+        <DataField>Dim Time[Full Date]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Time_ID">
+        <DataField>Dim Time[Time ID]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Fact_User_Events_计数">
+        <DataField>[Fact User Events 计数]</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

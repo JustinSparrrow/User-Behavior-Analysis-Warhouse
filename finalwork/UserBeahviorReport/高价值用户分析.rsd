@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>DataSource</DataSourceReference>
+      <CommandText>EVALUATE SUMMARIZECOLUMNS('Dim User'[Visitor ID], 'Dim Event'[Event Type], FILTER(VALUES('Dim Event'[Event Type]), ('Dim Event'[Event Type] = "transaction")), "Fact User Events 计数", [Fact User Events 计数])</CommandText>
+      <rd:DesignerState>
+        <QueryDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+          <CommandType>DAX</CommandType>
+          <QuerySpecification xsi:type="MDXQuerySpecification">
+            <Select>
+              <Items>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim User</DimensionName>
+                    <HierarchyName>Visitor ID</HierarchyName>
+                    <HierarchyUniqueName>[Dim User].[Visitor ID]</HierarchyUniqueName>
+                    <LevelName>Visitor ID</LevelName>
+                    <UniqueName>[Dim User].[Visitor ID].[Visitor ID]</UniqueName>
+                  </ID>
+                  <ItemCaption>Visitor ID</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Event</DimensionName>
+                    <HierarchyName>Event Type</HierarchyName>
+                    <HierarchyUniqueName>[Dim Event].[Event Type]</HierarchyUniqueName>
+                    <LevelName>Event Type</LevelName>
+                    <UniqueName>[Dim Event].[Event Type].[Event Type]</UniqueName>
+                  </ID>
+                  <ItemCaption>Event Type</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Measure">
+                    <MeasureName>Fact User Events 计数</MeasureName>
+                    <UniqueName>[Measures].[Fact User Events 计数]</UniqueName>
+                  </ID>
+                  <ItemCaption>Fact User Events 计数</ItemCaption>
+                  <BackColor>true</BackColor>
+                  <ForeColor>true</ForeColor>
+                  <FontFamily>true</FontFamily>
+                  <FontSize>true</FontSize>
+                  <FontWeight>true</FontWeight>
+                  <FontStyle>true</FontStyle>
+                  <FontDecoration>true</FontDecoration>
+                  <FormattedValue>true</FormattedValue>
+                  <FormatString>true</FormatString>
+                </Item>
+              </Items>
+            </Select>
+            <AutoExecute>false</AutoExecute>
+            <From>RetailUserBehaviorWH</From>
+            <Filter>
+              <FilterItems>
+                <FilterItem>
+                  <HierarchyUniqueName>[Dim Event].[Event Type]</HierarchyUniqueName>
+                  <Condition xsi:type="EqualTo">
+                    <Members>
+                      <Member>
+                        <MemberUniqueName>[Dim Event].[Event Type].&amp;[transaction]</MemberUniqueName>
+                      </Member>
+                    </Members>
+                  </Condition>
+                </FilterItem>
+              </FilterItems>
+            </Filter>
+            <Calculations />
+            <Aggregates />
+            <QueryProperties>
+              <IncludeMemberValue>true</IncludeMemberValue>
+            </QueryProperties>
+          </QuerySpecification>
+          <Query>
+            <Statement>EVALUATE SUMMARIZECOLUMNS('Dim User'[Visitor ID], 'Dim Event'[Event Type], FILTER(VALUES('Dim Event'[Event Type]), ('Dim Event'[Event Type] = "transaction")), "Fact User Events 计数", [Fact User Events 计数])</Statement>
+            <ParameterDefinitions />
+          </Query>
+        </QueryDefinition>
+      </rd:DesignerState>
+    </Query>
+    <Fields>
+      <Field Name="Visitor_ID">
+        <DataField>Dim User[Visitor ID]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Event_Type">
+        <DataField>Dim Event[Event Type]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Fact_User_Events_计数">
+        <DataField>[Fact User Events 计数]</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

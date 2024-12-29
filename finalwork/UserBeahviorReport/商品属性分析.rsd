@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>DataSource</DataSourceReference>
+      <CommandText>EVALUATE SUMMARIZECOLUMNS('Dim Property'[Property Name], 'Dim Event'[Event Type], 'Dim Property'[Property ID], "Fact Item Property Bridge 计数", [Fact Item Property Bridge 计数])</CommandText>
+      <rd:DesignerState>
+        <QueryDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+          <CommandType>DAX</CommandType>
+          <QuerySpecification xsi:type="MDXQuerySpecification">
+            <Select>
+              <Items>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Property</DimensionName>
+                    <HierarchyName>Property Name</HierarchyName>
+                    <HierarchyUniqueName>[Dim Property].[Property Name]</HierarchyUniqueName>
+                    <LevelName>Property Name</LevelName>
+                    <UniqueName>[Dim Property].[Property Name].[Property Name]</UniqueName>
+                  </ID>
+                  <ItemCaption>Property Name</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Event</DimensionName>
+                    <HierarchyName>Event Type</HierarchyName>
+                    <HierarchyUniqueName>[Dim Event].[Event Type]</HierarchyUniqueName>
+                    <LevelName>Event Type</LevelName>
+                    <UniqueName>[Dim Event].[Event Type].[Event Type]</UniqueName>
+                  </ID>
+                  <ItemCaption>Event Type</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Property</DimensionName>
+                    <HierarchyName>Property ID</HierarchyName>
+                    <HierarchyUniqueName>[Dim Property].[Property ID]</HierarchyUniqueName>
+                    <LevelName>Property ID</LevelName>
+                    <UniqueName>[Dim Property].[Property ID].[Property ID]</UniqueName>
+                  </ID>
+                  <ItemCaption>Property ID</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Measure">
+                    <MeasureName>Fact Item Property Bridge 计数</MeasureName>
+                    <UniqueName>[Measures].[Fact Item Property Bridge 计数]</UniqueName>
+                  </ID>
+                  <ItemCaption>Fact Item Property Bridge 计数</ItemCaption>
+                  <BackColor>true</BackColor>
+                  <ForeColor>true</ForeColor>
+                  <FontFamily>true</FontFamily>
+                  <FontSize>true</FontSize>
+                  <FontWeight>true</FontWeight>
+                  <FontStyle>true</FontStyle>
+                  <FontDecoration>true</FontDecoration>
+                  <FormattedValue>true</FormattedValue>
+                  <FormatString>true</FormatString>
+                </Item>
+              </Items>
+            </Select>
+            <AutoExecute>false</AutoExecute>
+            <From>RetailUserBehaviorWH</From>
+            <Filter>
+              <FilterItems />
+            </Filter>
+            <Calculations />
+            <Aggregates />
+            <QueryProperties>
+              <IncludeMemberValue>true</IncludeMemberValue>
+            </QueryProperties>
+          </QuerySpecification>
+          <Query>
+            <Statement>EVALUATE SUMMARIZECOLUMNS('Dim Property'[Property Name], 'Dim Event'[Event Type], 'Dim Property'[Property ID], "Fact Item Property Bridge 计数", [Fact Item Property Bridge 计数])</Statement>
+            <ParameterDefinitions />
+          </Query>
+        </QueryDefinition>
+      </rd:DesignerState>
+    </Query>
+    <Fields>
+      <Field Name="Property_Name">
+        <DataField>Dim Property[Property Name]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Event_Type">
+        <DataField>Dim Event[Event Type]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Property_ID">
+        <DataField>Dim Property[Property ID]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Fact_Item_Property_Bridge_计数">
+        <DataField>[Fact Item Property Bridge 计数]</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
